@@ -1,0 +1,21 @@
+
+html {
+  text-align: center;
+  font-family: roboto;
+  background-color: #282832;
+}
+h1 {
+  font-size: 60px;
+}
+h1, h2, p, a {
+  color: white;
+}
+div {
+  margin: 60px 0px;
+}
+a {
+  font-size: 20px;
+}
+footer {
+  margin: 60px;
+}
