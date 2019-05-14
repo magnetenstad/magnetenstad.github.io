@@ -1,33 +1,52 @@
 
+/* Roboto import */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* 0 */
 
 html {
   text-align: center;
   font-family: roboto;
   background-color: #282832;
 }
-h1 {
-  font-size: 60px;
+
+/* 1 */
+
+footer {
+  margin: 60px;
 }
-h1, h2, p, a {
-  color: white;
-}
+
+/* 2 */
+
 div {
   margin: 60px 0px;
 }
+
+/* 3 */
+
 a {
   font-size: 18px;
   text-decoration: none;
 }
+
+h1 {
+  font-size: 60px;
+}
+
+h1, h2, p, a {
+  color: white;
+}
+
 p {
   font-size: 18px;
 }
-footer {
-  margin: 60px;
-}
+
+/* 4 */
+
 a img {
   padding: 20px;
 }
+
 a img:hover {
   border-width: 4px;
   border-style: solid;
