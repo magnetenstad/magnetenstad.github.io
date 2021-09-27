@@ -1,5 +1,12 @@
 <script>
   import { goto } from "$app/navigation";
+  let tab = "resume";
+
+  function goto_tab(tabname) {
+    goto(tabname);
+    tab = tabname;
+  }
+
 </script>
 
 <div class="columns">
@@ -12,7 +19,7 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                <img src="avatar.jpg" alt="Avatar">
               </figure>
             </div>
             <div class="media-content">
@@ -45,8 +52,35 @@
       </div>
     </div>
   </div>
+  
+  <div class="column">
+    <div class="tabs is-boxed">
+      <ul>
+          <li class={tab == "resume" ? "is-active" : ""}>
+          <a on:click={() => goto_tab("resume")}>
+              <span>Résumé</span>
+          </a>
+          </li>
+          <li class={tab == "game-development" ? "is-active" : ""}>
+          <a on:click={() => goto_tab("game-development")}>
+              <span>Game Development</span>
+          </a>
+          </li>
+          <li class={tab == "web-development" ? "is-active" : ""}>
+              <a on:click={() => goto_tab("web-development")}>
+              <span>Web Development</span>
+          </a>
+          </li>
+          <li class={tab == "documents" ? "is-active" : ""}>
+          <a on:click={() => goto_tab("documents")}>
+              <span>Documents</span>
+          </a>
+          </li>
+      </ul>
+    </div>
 
-  <slot></slot>
+    <slot></slot>
+  </div>
 
   <div class="column is-1"></div>
 </div>
