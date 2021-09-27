@@ -3,7 +3,7 @@
 </script>
 
 <div class="column">
-    <Tabs tab="documents"></Tabs>
+    <Tabs tab="resume"></Tabs>
     <div class="tile is-ancestor">
         <div class="tile is-4 is-vertical is-parent">
         <div class="tile is-child box">
