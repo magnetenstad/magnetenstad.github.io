@@ -5,10 +5,7 @@
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-light">
-            <strong>Social link</strong>
-          </a>
-          <a class="button is-light">
-            <strong>Social link</strong>
+            Give Feedback
           </a>
         </div>
       </div>
@@ -16,7 +13,10 @@
   </div>
 </nav>
 
-<slot></slot>
+<div style="min-height: 100vh; padding-bottom:20pt;">
+  <slot></slot>
+</div>
+
 
 <footer class="footer">
   <div class="content has-text-centered">
