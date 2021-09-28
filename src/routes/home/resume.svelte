@@ -25,7 +25,7 @@
                 </li>
                 <br>
                 <li>
-                    <p><time datetime="2018-11">Nov 2018</time> – <time datetime="2019-05">May 2019</time> <br>
+                    <p><time datetime="2018-11">Nov 2018</time> – <time datetime="2019-05">Jun 2019</time> <br>
                     <strong>Game developer, Self-employed</strong> <br>
                     Developed and published <em><a href="https://store.steampowered.com/app/994360/CoderBear/">CoderBear</a></em>
                     on Steam, after a successful <a href="https://www.kickstarter.com/projects/tenstad/coderbear">Kickstarter campaign</a>.</p>

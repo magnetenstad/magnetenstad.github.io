@@ -14,8 +14,8 @@
   }
 </script>
 
+<div class="container">
 <div class="columns">
-  <div class="column is-1"></div>
 
   <div class="column is-one-fifth">
     <div class="block">
@@ -100,5 +100,5 @@
     <slot></slot>
   </div>
 
-  <div class="column is-1"></div>
+</div>
 </div>
