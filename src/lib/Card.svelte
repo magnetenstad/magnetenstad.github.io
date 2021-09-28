@@ -5,12 +5,12 @@
     export let href = ".";
     export let datetime = "";
     export let tags = [];
-    let button_text = "Play";
+    let button_text = "Visit";
     if (href.includes("steam")) {
-        button_text += " on Steam"
+        button_text = "Play on Steam"
     }
     if (href.includes("itch")) {
-        button_text += " on Itch"
+        button_text = "Play on Itch"
     }
 </script>
 
