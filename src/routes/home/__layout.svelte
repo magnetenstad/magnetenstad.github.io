@@ -1,9 +1,15 @@
+
 <script>
   import { goto } from "$app/navigation";
-  let tab = "resume";
+  import { onMount } from "svelte";
+  let tab = "";
+  
+  onMount(() => {
+    tab = window.location.pathname.split("/").pop()
+  });
 
   function goto_tab(tabname) {
-    goto(tabname, {noscroll: true, state:{tab: tabname}});
+    goto("./" + tabname, {noscroll: true, state:{tab: tabname}});
     tab = tabname;
   }
 </script>
