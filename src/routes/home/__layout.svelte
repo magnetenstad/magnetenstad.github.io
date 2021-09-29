@@ -88,12 +88,6 @@
               <span>Apps</span>
           </a>
           </li>
-          <li class={tab == "artwork" ? "is-active" : ""}>
-            <!-- svelte-ignore a11y-missing-attribute -->
-          <a on:click={() => goto_tab("artwork")}>
-              <span>Artwork</span>
-          </a>
-          </li>
       </ul>
     </div>
 
