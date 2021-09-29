@@ -5,11 +5,13 @@
   let tab = "";
   
   onMount(() => {
-    tab = window.location.pathname.split("/").pop()
+    let path = window.location.pathname.split("/")
+    path.pop()
+    tab = path.pop()
   });
-
+  
   function goto_tab(tabname) {
-    goto("./" + tabname, {noscroll: true, state:{tab: tabname}});
+    goto("../" + tabname, {noscroll: true, state:{tab: tabname}});
     tab = tabname;
   }
 </script>
