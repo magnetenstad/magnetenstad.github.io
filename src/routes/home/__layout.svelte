@@ -3,11 +3,17 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   let tab = "";
-  
-  onMount(() => {
-    tab = window.location.pathname.split("/").pop()
-  });
+  let url = null;
 
+  onMount(() => {
+    tab = window.location.pathname.split("/").pop();
+    url = window.location.pathname;
+    if (url.endsWith("/")) {
+      url = url.substring(0, url.length-1)
+      goto(url)
+    }
+  });
+  
   function goto_tab(tabname) {
     goto("./" + tabname, {noscroll: true, state:{tab: tabname}});
     tab = tabname;
