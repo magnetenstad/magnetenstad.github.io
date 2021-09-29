@@ -63,7 +63,7 @@
         <p class="title">Skills</p>
         <div class="content">
             <ul>
-                <li>Programming</li>
+                <li>General</li>
                 <ul>
                     <li>Python</li>
                     <li>Java</li>
@@ -83,6 +83,10 @@
                 <li>App development</li>
                 <ul>
                     <li>Flutter</li>
+                </ul>
+                <li>Design and prototyping</li>
+                <ul>
+                    <li>Figma</li>
                 </ul>
             </ul>
             <br>
