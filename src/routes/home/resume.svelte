@@ -45,12 +45,16 @@
                 </li>
                 <br>
                 <li>
+                    <p><time datetime="2019-08">Aug 2019</time> – <time datetime="2020-06">Jun 2020</time> <br>
+                    <strong>Calculus, UIO</strong></p>
+                </li>
+                <br>
+                <li>
                     <p><time datetime="2017-08">Aug 2017</time> – <time datetime="2020-06">Jun 2020</time> <br>
                     <strong>Studiespesialisering, Nadderud VGS</strong></p>
                 </li>
                 <br>
             </ul>
-            
         </div>
     </div>
     </div>
