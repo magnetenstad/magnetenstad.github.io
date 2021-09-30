@@ -4,7 +4,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-light">
+          <a class="button is-light" href="mailto:feedback@magne.dev">
             Give Feedback
           </a>
         </div>
