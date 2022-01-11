@@ -1,48 +1,87 @@
 
-<script lang='ts'>
-  import Card from '$lib/Card.svelte';
-  import { onMount } from 'svelte';
-  import metadataParser from 'markdown-yaml-metadata-parser'
+<script lang="ts">
+  import Documents from "$lib/components/Documents.svelte";
 
-  let documents = [];
+  import HelloDialog from "$lib/components/HelloDialog.svelte";
+  import Portrait from "$lib/components/Portrait.svelte";
 
-  onMount(() => {
-    fetch('documents/.documents.config.json')
-      .then((response) => response.json())
-      .then((json) => {
-        for (let filename of json.documents) {
-          fetch('documents/' + filename)
-            .then((response) => response.text())
-            .then((text) => {
-              documents.push(metadataParser(text));
-              documents = documents;
-            });
-        }
-      });
-  });
+  let showHelloDialog: boolean = true;
+  
 </script>
 
-<div class="container">
-  <ul class="cards">
-    {#each documents as document}
-      <li>
-        <Card {document}></Card>
-      </li>
-    {/each}
-  </ul>
+<div class="wrapper">
+  {#if showHelloDialog}
+    <HelloDialog
+      title="Hey, I'm Magne Tenstad"
+      text="AJKSd aDHLKJ sadlkJ ALSKjdhlAKJSdh lKJAShdl AJKHSdl kJAHS dl"
+      buttonText="Hello!"
+      buttonCallback={() => showHelloDialog = false}
+    >
+      <div class="portrait-wrapper-dialog">
+        <Portrait
+          imgSrc="https://avatars.githubusercontent.com/u/46494695"
+          imgAlt="Portrait of Magne Tenstad"
+        />
+      </div>
+    </HelloDialog>
+  {:else}
+  
+  <div class="body">
+    <div class="sidebar">
+      <h1>Hello world!</h1>
+      <div class="portrait-wrapper">
+        <Portrait
+          imgSrc="https://avatars.githubusercontent.com/u/46494695"
+          imgAlt="Portrait of Magne Tenstad"
+        />
+      </div>
+    </div>
+  
+    <div class="main">
+      <Documents></Documents>
+    </div>
+  
+  </div>
+
+  {/if}
 </div>
 
 <style>
-  .container {
-    max-width: 80vw;
-    margin: auto;
+  .wrapper {
+    background-color: rgb(230, 230, 230);
+    min-height: 100vh;
+    overflow: hidden;
   }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin: 4rem 5vw;
-    padding: 0;
-    list-style-type: none;
+
+  .body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100vh;
   }
+
+  .main {
+    flex: 2;
+    overflow: scroll;
+  }
+
+  .sidebar {
+    flex: 1;
+    background-color: rgb(190, 190, 190);
+  }
+
+  .portrait-wrapper {
+    width: 4rem;
+    z-index: 1;
+    left: 100px;
+  }
+
+  .portrait-wrapper-dialog {
+    position: fixed;
+    left: 65%;
+    top: -15%;
+    width: 16rem;
+  }
+
+  
 </style>
