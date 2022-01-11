@@ -4,13 +4,17 @@
 
   import HelloDialog from "$lib/components/HelloDialog.svelte";
   import Portrait from "$lib/components/Portrait.svelte";
+  import Chat from "$lib/components/Chat.svelte";
+import { Message } from "$lib/Message";
 
   let showHelloDialog: boolean = true;
   
 </script>
 
 <div class="wrapper">
+
   {#if showHelloDialog}
+
     <HelloDialog
       title="Hey, I'm Magne Tenstad"
       text="AJKSd aDHLKJ sadlkJ ALSKjdhlAKJSdh lKJAShdl AJKHSdl kJAHS dl"
@@ -24,27 +28,33 @@
         />
       </div>
     </HelloDialog>
+
   {:else}
-  
-  <div class="body">
-    <div class="sidebar">
-      <h1>Hello world!</h1>
-      <div class="portrait-wrapper">
-        <Portrait
+    
+    <div class="body">
+      <div class="sidebar">
+        <Chat
           imgSrc="https://avatars.githubusercontent.com/u/46494695"
-          imgAlt="Portrait of Magne Tenstad"
+          messages={[
+            new Message("magne", "Hey there! bla bla bla bla blabla blabla blabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blabla"),
+            new Message("user", "Hello!"),
+            new Message("magne", "What's up?")
+          ]}
         />
       </div>
-    </div>
   
-    <div class="main">
-      <Documents></Documents>
+      <div class="main">
+        <Documents></Documents>
+      </div>
     </div>
-  
-  </div>
 
   {/if}
+
 </div>
+
+
+
+
 
 <style>
   .wrapper {
@@ -62,18 +72,16 @@
 
   .main {
     flex: 2;
-    overflow: scroll;
+    overflow: auto;
   }
+
+  /* .main::-webkit-scrollbar {
+    display: none;
+  } */
 
   .sidebar {
     flex: 1;
     background-color: rgb(190, 190, 190);
-  }
-
-  .portrait-wrapper {
-    width: 4rem;
-    z-index: 1;
-    left: 100px;
   }
 
   .portrait-wrapper-dialog {
@@ -83,5 +91,4 @@
     width: 16rem;
   }
 
-  
 </style>
