@@ -1,5 +1,4 @@
-
-export type { Document, Metadata }
+export type { Document, Metadata };
 
 interface Document {
   metadata: Metadata;

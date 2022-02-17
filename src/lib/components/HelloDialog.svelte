@@ -1,4 +1,3 @@
-
 <script lang="ts">
   export let title: string;
   export let text: string;
@@ -10,7 +9,7 @@
   <div class="body">
     <h1>{title}</h1>
     <p>{text}</p>
-    <slot></slot>
+    <slot />
     <button on:click={() => buttonCallback()}>{buttonText}</button>
   </div>
 </div>

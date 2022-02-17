@@ -1,11 +1,9 @@
-
 <script lang="ts">
-  import type { Message } from "$lib/Message";
+  import type { Message } from '$lib/Message';
 
   export let imgSrc: string;
   export let messages: Array<Message>;
 </script>
-
 
 <div class="window">
   <div class="scroll-wrapper">
@@ -13,7 +11,7 @@
       {#each messages as message}
         {#if message.from == 'magne'}
           <div class="message-wrapper-1">
-            <img class="message__img" src={imgSrc} alt="">
+            <img class="message__img" src={imgSrc} alt="" />
             <p>{message.text}</p>
           </div>
         {:else}
@@ -24,7 +22,7 @@
       {/each}
     </div>
   </div>
-  <input class="text-input"/>
+  <input class="text-input" />
 </div>
 
 <style>
@@ -35,12 +33,12 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
-    
+
     background-color: rgb(230, 230, 230);
     padding: 1rem;
     margin: 2rem auto;
     border-radius: 2rem;
-    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.20);
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 
   .scroll-wrapper {
@@ -62,9 +60,9 @@
     width: 90%;
     min-height: 2rem;
     border-radius: 2rem;
-    border-color:rgba(0, 0, 0, 0.25);
+    border-color: rgba(0, 0, 0, 0.25);
     padding: 0rem 1rem;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.20);
+    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
     margin: 1rem 0;
   }
 
@@ -86,7 +84,7 @@
     flex: 4;
     background-color: white;
     border-radius: 2rem;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.20);
+    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
     padding: 0.5rem 1rem;
     margin: 0.5rem;
   }
@@ -101,7 +99,6 @@
     width: 3rem;
     height: 3rem;
     border-radius: 2rem;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.20);
+    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
   }
-
 </style>

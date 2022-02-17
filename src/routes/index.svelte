@@ -1,25 +1,21 @@
-
 <script lang="ts">
-  import Documents from "$lib/components/Documents.svelte";
+  import Documents from '$lib/components/Documents.svelte';
 
-  import HelloDialog from "$lib/components/HelloDialog.svelte";
-  import Portrait from "$lib/components/Portrait.svelte";
-  import Chat from "$lib/components/Chat.svelte";
-import { Message } from "$lib/Message";
+  import HelloDialog from '$lib/components/HelloDialog.svelte';
+  import Portrait from '$lib/components/Portrait.svelte';
+  import Chat from '$lib/components/Chat.svelte';
+  import { Message } from '$lib/Message';
 
   let showHelloDialog: boolean = true;
-  
 </script>
 
 <div class="wrapper">
-
   {#if showHelloDialog}
-
     <HelloDialog
       title="Hey, I'm Magne Tenstad"
       text="AJKSd aDHLKJ sadlkJ ALSKjdhlAKJSdh lKJAShdl AJKHSdl kJAHS dl"
       buttonText="Hello!"
-      buttonCallback={() => showHelloDialog = false}
+      buttonCallback={() => (showHelloDialog = false)}
     >
       <div class="portrait-wrapper-dialog">
         <Portrait
@@ -28,33 +24,28 @@ import { Message } from "$lib/Message";
         />
       </div>
     </HelloDialog>
-
   {:else}
-    
     <div class="body">
       <div class="sidebar">
         <Chat
           imgSrc="https://avatars.githubusercontent.com/u/46494695"
           messages={[
-            new Message("magne", "Hey there! bla bla bla bla blabla blabla blabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blabla"),
-            new Message("user", "Hello!"),
-            new Message("magne", "What's up?")
+            new Message(
+              'magne',
+              'Hey there! bla bla bla bla blabla blabla blabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blabla'
+            ),
+            new Message('user', 'Hello!'),
+            new Message('magne', "What's up?")
           ]}
         />
       </div>
-  
+
       <div class="main">
-        <Documents></Documents>
+        <Documents />
       </div>
     </div>
-
   {/if}
-
 </div>
-
-
-
-
 
 <style>
   .wrapper {
@@ -90,5 +81,4 @@ import { Message } from "$lib/Message";
     top: -15%;
     width: 16rem;
   }
-
 </style>

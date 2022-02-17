@@ -9,4 +9,3 @@ tags: game, godot, gamejam
 # Hungry Jungle
 
 A great game.
-

@@ -1,8 +1,7 @@
-
-<script lang='ts'>
+<script lang="ts">
   import Card from '$lib/components/Card.svelte';
   import { onMount } from 'svelte';
-  import metadataParser from 'markdown-yaml-metadata-parser'
+  import metadataParser from 'markdown-yaml-metadata-parser';
 
   let documents = [];
 
@@ -26,7 +25,7 @@
   <ul class="cards">
     {#each documents as document}
       <li>
-        <Card {document}></Card>
+        <Card {document} />
       </li>
     {/each}
   </ul>
@@ -38,7 +37,7 @@
     margin: auto;
     align-content: flex-start;
   }
-  
+
   .cards {
     display: flex;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

@@ -1,5 +1,4 @@
-
-export { Message }
+export { Message };
 
 class Message {
   from: string;
