@@ -1,16 +1,10 @@
 <script lang="ts">
-  export let title: string;
-  export let text: string;
-  export let buttonText: string;
-  export let buttonCallback: Function;
+
 </script>
 
 <div class="dialog">
   <div class="body">
-    <h1>{title}</h1>
-    <p>{text}</p>
     <slot />
-    <button on:click={() => buttonCallback()}>{buttonText}</button>
   </div>
 </div>
 
@@ -28,17 +22,49 @@
   }
 
   .body {
-    max-width: 80%;
+    max-width: 75%;
   }
 
-  button {
+  :global button {
     border: none;
+    font-size: medium;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
-    background-color: aqua;
+    color: white;
+    background-color: rgb(252, 159, 82);
   }
 
-  button:hover {
+  :global button:hover {
     cursor: pointer;
+    animation-duration: 0.25s;
+    animation-name: button-hover;
+    animation-fill-mode: forwards;
+  }
+
+  :global button:active {
+    background-color: rgb(243, 147, 91);
+    animation-duration: 0.2s;
+    animation-name: button-click;
+  }
+
+  @keyframes button-click {
+    from {
+      transform: translateY(4px);
+    }
+
+    to {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes button-hover {
+    from {
+      transform: translateY(0px);
+    }
+
+    to {
+      transform: translateY(-4px);
+      background-color: rgb(255, 179, 92);
+    }
   }
 </style>

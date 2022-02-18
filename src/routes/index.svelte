@@ -1,43 +1,36 @@
 <script lang="ts">
   import Documents from '$lib/components/Documents.svelte';
-
   import HelloDialog from '$lib/components/HelloDialog.svelte';
   import Portrait from '$lib/components/Portrait.svelte';
   import Chat from '$lib/components/Chat.svelte';
-  import { Message } from '$lib/Message';
+  import type { Message } from '$lib/Message';
 
   let showHelloDialog: boolean = true;
+  let messages: Array<Message> = [];
 </script>
 
 <div class="wrapper">
   {#if showHelloDialog}
-    <HelloDialog
-      title="Hey, I'm Magne Tenstad"
-      text="AJKSd aDHLKJ sadlkJ ALSKjdhlAKJSdh lKJAShdl AJKHSdl kJAHS dl"
-      buttonText="Hello!"
-      buttonCallback={() => (showHelloDialog = false)}
-    >
+    <HelloDialog>
+      <h1>Hey, I'm Magne Tenstad 👋</h1>
+      <ul>
+        <li>CS student at NTNU</li>
+        <li>Proficient game and web developer</li>
+        <li>Open to work this summer</li>
+      </ul>
       <div class="portrait-wrapper-dialog">
         <Portrait
           imgSrc="https://avatars.githubusercontent.com/u/46494695"
           imgAlt="Portrait of Magne Tenstad"
         />
       </div>
+      <br>
+      <button on:click={() => (showHelloDialog = false)} style="margin-left: 50%;">Hello! 👋</button>
     </HelloDialog>
   {:else}
     <div class="body">
       <div class="sidebar">
-        <Chat
-          imgSrc="https://avatars.githubusercontent.com/u/46494695"
-          messages={[
-            new Message(
-              'magne',
-              'Hey there! bla bla bla bla blabla blabla blabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blabla'
-            ),
-            new Message('user', 'Hello!'),
-            new Message('magne', "What's up?")
-          ]}
-        />
+        <Chat imgSrc="https://avatars.githubusercontent.com/u/46494695" {messages} />
       </div>
 
       <div class="main">
