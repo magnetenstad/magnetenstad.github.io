@@ -29,6 +29,7 @@
   .window {
     width: 80%;
     height: 80%;
+    max-width: 25rem;
 
     display: flex;
     flex-direction: column;
@@ -59,11 +60,16 @@
     flex: 0;
     width: 90%;
     min-height: 2rem;
+    outline: none;
     border-radius: 2rem;
-    border-color: rgba(0, 0, 0, 0.25);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
     padding: 0rem 1rem;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
     margin: 1rem 0;
+  }
+
+  .text-input:focus {
+    border-color: rgb(252, 159, 82);
   }
 
   .message-wrapper-1 {

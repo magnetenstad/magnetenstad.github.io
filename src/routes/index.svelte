@@ -1,44 +1,27 @@
 <script lang="ts">
-  import Documents from '$lib/components/Documents.svelte';
   import HelloDialog from '$lib/components/HelloDialog.svelte';
   import Portrait from '$lib/components/Portrait.svelte';
-  import Chat from '$lib/components/Chat.svelte';
-  import type { Message } from '$lib/Message';
   import Button from '$lib/components/Button.svelte';
-
-  let showHelloDialog: boolean = true;
-  let messages: Array<Message> = [];
+  import { goto } from '$app/navigation';
 </script>
 
 <div class="wrapper">
-  {#if showHelloDialog}
-    <HelloDialog>
-      <h1>Hey, I'm Magne Tenstad 👋</h1>
-      <ul>
-        <li>CS student at NTNU</li>
-        <li>Proficient game and web developer</li>
-        <li>Open to work this summer</li>
-      </ul>
-      <div class="portrait-wrapper-dialog">
-        <Portrait
-          imgSrc="https://avatars.githubusercontent.com/u/46494695"
-          imgAlt="Portrait of Magne Tenstad"
-        />
-      </div>
-      <br>
-      <Button onClick={() => (showHelloDialog = false)} style="margin-left: 50%;">Hello! 👋</Button>
-    </HelloDialog>
-  {:else}
-    <div class="body">
-      <div class="sidebar">
-        <Chat imgSrc="https://avatars.githubusercontent.com/u/46494695" {messages} />
-      </div>
-
-      <div class="main">
-        <Documents />
-      </div>
+  <HelloDialog>
+    <h1>Hey, I'm Magne Tenstad 👋</h1>
+    <ul>
+      <li>CS student at NTNU</li>
+      <li>Proficient game and web developer</li>
+      <li>Open to work this summer</li>
+    </ul>
+    <div class="portrait-wrapper-dialog">
+      <Portrait
+        imgSrc="https://avatars.githubusercontent.com/u/46494695"
+        imgAlt="Portrait of Magne Tenstad"
+      />
     </div>
-  {/if}
+    <br>
+    <Button onClick={() => goto('/chat')} style="margin-left: 50%;">Hello! 👋</Button>
+  </HelloDialog>
 </div>
 
 <style>
@@ -46,27 +29,6 @@
     background-color: rgb(230, 230, 230);
     min-height: 100vh;
     overflow: hidden;
-  }
-
-  .body {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    height: 100vh;
-  }
-
-  .main {
-    flex: 2;
-    overflow: auto;
-  }
-
-  /* .main::-webkit-scrollbar {
-    display: none;
-  } */
-
-  .sidebar {
-    flex: 1;
-    background-color: rgb(190, 190, 190);
   }
 
   .portrait-wrapper-dialog {
