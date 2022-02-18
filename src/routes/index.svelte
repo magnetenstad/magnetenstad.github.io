@@ -4,6 +4,7 @@
   import Portrait from '$lib/components/Portrait.svelte';
   import Chat from '$lib/components/Chat.svelte';
   import type { Message } from '$lib/Message';
+  import Button from '$lib/components/Button.svelte';
 
   let showHelloDialog: boolean = true;
   let messages: Array<Message> = [];
@@ -25,7 +26,7 @@
         />
       </div>
       <br>
-      <button on:click={() => (showHelloDialog = false)} style="margin-left: 50%;">Hello! 👋</button>
+      <Button onClick={() => (showHelloDialog = false)} style="margin-left: 50%;">Hello! 👋</Button>
     </HelloDialog>
   {:else}
     <div class="body">
