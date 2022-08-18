@@ -1,0 +1,32 @@
+%{ For chat feature on magne.dev }
+
+Hey, I'm Magne Tenstad 👋
+#{start}
+What would you like to know?
+	Work
+		I currently work for Norsonic and NTNU. However, I am open to work this summer.
+			Contact about work
+				Send me an email at work@magne.dev
+					Sure!
+						>{start}
+			Ok
+				>{start}
+	Hobbies
+		#{hobbies}
+		%{ I've always like to create things. Back in elementary school, I liked to draw and paint, both traditionally and digitally. In middle school, I was introduced to game programming, and in high school I started publishing games. Since then, I've had a growing interest for all kinds of software. }
+		My main creative hobbies over the years, have been programming💻, games🎮, and art🖌️.
+			Software
+				>{hobbies}
+			Games
+				>{hobbies}
+			Art
+				>{hobbies}
+			Ok
+				>{start}
+	School
+		I study Computer Science at NTNU in Trondheim.
+			Ok
+				>{start}
+Thank you for your interest!
+	Tell me more!
+		>{start}
