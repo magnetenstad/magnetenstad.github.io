@@ -1,70 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="/bird.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Magne Tenstad</title>
-		
-
-		
-
-		<link rel="modulepreload" href="/_app/start-d01d362a.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-ad30b6ea.js">
-		<link rel="modulepreload" href="/_app/chunks/singletons-12a22614.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-636742bc.js">
-		<link rel="modulepreload" href="/_app/pages/index.svelte-39d11e27.js">
-		<link rel="modulepreload" href="/_app/chunks/navigation-51f4a605.js">
-		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
-
-		<script type="module">
-			import { start } from "/_app/start-d01d362a.js";
-			start({
-				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":""},
-				session: {},
-				host: location.host,
-				route: true,
-				spa: false,
-				trailing_slash: "always",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/_app/pages/__layout.svelte-636742bc.js"),
-						import("/_app/pages/index.svelte-39d11e27.js")
-					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/",
-						query: new URLSearchParams(""),
-						params: {}
-					}
-				}
-			});
-		</script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-		<!-- <link rel="stylesheet" href="/cyborg.css"> -->
-	</head>
-	<body>
-		<div id="svelte">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/bird.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Magne Tenstad</title>
+    <meta http-equiv="content-security-policy" content="">
+	<link href="./_app/immutable/assets/+layout-4e4e1d14.css" rel="stylesheet">
+	<link href="./_app/immutable/assets/+page-41da269a.css" rel="stylesheet">
+	<link href="./_app/immutable/assets/Button-f082e747.css" rel="stylesheet">
+	<link rel="modulepreload" href="./_app/immutable/start-c6ae83ab.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/index-20347944.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/singletons-e5e57fbd.js">
+	<link rel="modulepreload" href="./_app/immutable/components/pages/_layout.svelte-549ed2be.js">
+	<link rel="modulepreload" href="./_app/immutable/components/pages/_page.svelte-5b8d01b9.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/Button-6fcf3d11.js">
+  </head>
+  <body>
+    <div id="svelte">
 
 
-<nav class="navbar" role="navigation" aria-label="main navigation"><div id="navbarBasicExample" class="navbar-menu"><div class="navbar-end"><div class="navbar-item"><div class="buttons"><a class="button is-light" href="mailto:feedback@magne.dev">Give Feedback
-          </a></div></div></div></div></nav>
-
-<div style="min-height: 100vh; padding-bottom:20pt;"></div>
-
-
-<footer class="footer"><div class="content has-text-centered"><p>Site by Magne Tenstad.
-      Built with <a href="https://kit.svelte.dev/">SvelteKit</a>
-      and <a href="https://bulma.io">Bulma</a>.
-      Hosted by <a href="https://pages.github.com/">GitHub</a>.
-    </p></div></footer>
-
+<div class="wrapper svelte-1pvy223"><div class="dialog svelte-nn9mtl"><div class="body svelte-nn9mtl"><h1>Hey, I&#39;m Magne Tenstad 👋</h1>
+		<ul><li>CS student at NTNU</li>
+			<li>Proficient game and web developer</li>
+			<li>Open to work this summer</li></ul>
+		<div class="portrait-wrapper svelte-1pvy223"><img class="portrait svelte-lk875d" src="https://avatars.githubusercontent.com/u/46494695" alt="Portrait of Magne Tenstad"></div>
+		<br>
+		<button style="margin-left: 50%;" class="svelte-duyn3j">Hello! 👋
+</button></div>
+</div>
+</div>
 
 
-			
-		</div>
-	</body>
+		<script type="module" data-sveltekit-hydrate="w9rqdv">
+		import { set_public_env, start } from "./_app/immutable/start-c6ae83ab.js";
+
+		set_public_env({});
+
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="w9rqdv"]').parentNode,
+			paths: {"base":"","assets":""},
+			route: true,
+			spa: false,
+			trailing_slash: "always",
+			hydrate: {
+				status: 200,
+				error: null,
+				node_ids: [0, 2],
+				params: {},
+				routeId: ""
+			}
+		});
+	</script>
+	</div>
+  </body>
 </html>
