@@ -2,11 +2,9 @@
 	import HelloDialog from '$lib/components/HelloDialog.svelte';
 	import Portrait from '$lib/components/Portrait.svelte';
 	import Button from '$lib/components/Button.svelte';
-	import GlobalCss from '$lib/GlobalCss.svelte';
 	import { goto } from '$app/navigation';
 </script>
 
-<GlobalCss />
 <div class="wrapper">
 	<HelloDialog>
 		<h1>Hey, I'm Magne Tenstad 👋</h1>
