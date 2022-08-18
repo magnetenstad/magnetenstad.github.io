@@ -2,9 +2,9 @@
   "name": "magne.dev",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -25,11 +25,13 @@
     "svelte-check": "^2.2.11",
     "svelte-preprocess": "^4.10.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "vite": "^3.0.8"
   },
   "type": "module",
   "dependencies": {
     "markdown-yaml-metadata-parser": "^3.0.0",
+    "pratjs": "^1.1.0",
     "svelte-markdown": "^0.2.1"
   }
 }

@@ -1,19 +1,11 @@
 <script lang="ts">
   import Chat from '$lib/components/Chat.svelte';
   import { Message } from '$lib/Message';
-  let messages: Array<Message> = [
-    new Message(true, 'hey there!'),
-    new Message(true, 'hey there!'),
-    new Message(true, 'hey there!'),
-    new Message(true, 'hey there!'),
-    new Message(true, 'hey there!'),
-    new Message(true, 'hey there!'),
-    new Message(true, 'hey there!'),
-    new Message(false, 'hey there!'),
-    new Message(false, 'hey there!'),
-    new Message(false, 'hey there!'),
-    new Message(true, 'hey there!')
-  ];
+  import { Prat } from 'pratjs';
+  import text from '$lib/../../static/prat/prat.talk?raw';
+  const prat = Prat.fromString(text);
+
+  let messages: Array<Message> = [new Message(true, prat.getLine().text)];
 </script>
 
 <div class="wrapper">
