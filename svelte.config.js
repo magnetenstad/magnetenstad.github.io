@@ -5,12 +5,16 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
   preprocess: preprocess(),
   kit: {
+    // https://www.npmjs.com/package/@sveltejs/adapter-static
     adapter: adapter({
       pages: 'build',
       assets: 'build',
       fallback: null
     }),
-    trailingSlash: 'always'
+    trailingSlash: 'always',
+    prerender: {
+      default: true
+    }
   }
 };
 
