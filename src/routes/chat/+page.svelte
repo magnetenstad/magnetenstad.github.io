@@ -1,16 +1,14 @@
 <script lang="ts">
   import Chat from '$lib/components/Chat.svelte';
-  import { Message } from '$lib/Message';
   import { Prat } from 'pratjs';
-  import text from '$lib/../../static/prat/prat.talk?raw';
-  const prat = Prat.fromString(text);
-
-  let messages: Array<Message> = [new Message(true, prat.getLine().text)];
+  import talkString from '$lib/assets/talk/magne.talk?raw';
+  const prat = Prat.fromString(talkString);
+  const imgSrc = 'https://avatars.githubusercontent.com/u/46494695';
 </script>
 
 <div class="wrapper">
   <div class="body">
-    <Chat imgSrc="https://avatars.githubusercontent.com/u/46494695" {messages} />
+    <Chat {imgSrc} {prat} />
   </div>
 </div>
 
@@ -23,8 +21,6 @@
 
   .body {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
     height: 100vh;
   }
 </style>
