@@ -41,8 +41,8 @@
 	.cards {
 		display: flex;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 2rem;
-		margin: 4rem 5vw;
+		gap: 2em;
+		margin: 4em 5vw;
 		padding: 0;
 		list-style-type: none;
 		flex-wrap: wrap;

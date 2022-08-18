@@ -1,7 +1,19 @@
 <script lang="ts">
 	import Chat from '$lib/components/Chat.svelte';
 	import { Message } from '$lib/Message';
-	let messages: Array<Message> = [new Message('magne', 'hey there!')];
+	let messages: Array<Message> = [
+		new Message(true, 'hey there!'),
+		new Message(true, 'hey there!'),
+		new Message(true, 'hey there!'),
+		new Message(true, 'hey there!'),
+		new Message(true, 'hey there!'),
+		new Message(true, 'hey there!'),
+		new Message(true, 'hey there!'),
+		new Message(false, 'hey there!'),
+		new Message(false, 'hey there!'),
+		new Message(false, 'hey there!'),
+		new Message(true, 'hey there!')
+	];
 </script>
 
 <div class="wrapper">
@@ -12,7 +24,7 @@
 
 <style>
 	.wrapper {
-		background-color: rgb(230, 230, 230);
+		background-color: var(--color-background);
 		min-height: 100vh;
 		overflow: hidden;
 	}

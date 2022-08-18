@@ -8,14 +8,16 @@
 <div class="window">
 	<div class="scroll-wrapper">
 		<div class="messages-wrapper">
-			{#each messages as message}
-				{#if message.from == 'magne'}
-					<div class="message-wrapper-1">
-						<img class="message__img" src={imgSrc} alt="" />
+			{#each messages as message, i}
+				{#if message.incoming}
+					<div class="message message-left">
+						{#if !messages[i + 1]?.incoming ?? false}
+							<img class="message-img" src={imgSrc} alt="" />
+						{/if}
 						<p>{message.text}</p>
 					</div>
 				{:else}
-					<div class="message-wrapper-2">
+					<div class="message message-right">
 						<p class="user">{message.text}</p>
 					</div>
 				{/if}
@@ -29,21 +31,25 @@
 	.window {
 		width: 80%;
 		height: 80%;
-		max-width: 25rem;
+		max-width: 25em;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: end;
 
-		background-color: rgb(230, 230, 230);
-		padding: 1rem;
-		margin: 2rem auto;
-		border-radius: 2rem;
-		box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.2);
+		background-color: var(--color-background);
+		padding: 1em;
+		margin: 2em auto;
+		border-radius: 2em;
+		box-shadow: 0em 1em 2em var(--color-shadow);
 	}
 
 	.scroll-wrapper {
 		overflow: auto;
+	}
+
+	.scroll-wrapper::-webkit-scrollbar {
+		display: none;
 	}
 
 	.messages-wrapper {
@@ -52,59 +58,59 @@
 		justify-content: end;
 	}
 
-	/* .scroll-wrapper::-webkit-scrollbar {
-    display: none;
-  } */
-
-	.text-input {
-		flex: 0;
-		width: 90%;
-		min-height: 2rem;
-		outline: none;
-		border-radius: 2rem;
-		border-style: solid;
-		border-color: rgba(0, 0, 0, 0);
-		padding: 0rem 1rem;
-		margin: 1rem 0;
-	}
-
-	.text-input:focus {
-		border-color: rgb(252, 159, 82);
-	}
-
-	.message-wrapper-1 {
+	.message {
+		flex: 1;
 		display: flex;
 		flex-direction: row;
-		margin: 0.5rem;
+		align-items: center;
+		margin: 0.5em;
+		max-width: 60%;
+	}
+
+	.message-left {
 		align-self: flex-start;
 	}
 
-	.message-wrapper-2 {
-		display: flex;
-		flex-direction: row;
-		margin: 0.5rem;
+	.message-right {
 		align-self: flex-end;
 	}
 
 	p {
-		flex: 4;
 		background-color: white;
-		border-radius: 2rem;
-		box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-		padding: 0.5rem 1rem;
-		margin: 0.5rem;
+		border-radius: 2em;
+		box-shadow: 0em 0.5em 1em var(--color-shadow);
+		padding: 0.5em 1em;
+		margin: 0;
+		margin-left: 1em;
+		height: min-content;
 	}
 
 	p.user {
-		background-color: rgb(33, 130, 241);
+		background-color: var(--color-primary);
 		color: white;
 	}
 
-	.message__img {
+	.message-img {
 		flex: 0;
-		width: 3rem;
-		height: 3rem;
-		border-radius: 2rem;
-		box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+		width: 3em;
+		height: 3em;
+		border-radius: 2em;
+		box-shadow: 0em 0.5em 1em var(--color-shadow);
+	}
+
+	.text-input {
+		flex: 0;
+		width: 90%;
+		min-height: 2em;
+		outline: none;
+		border-radius: 2em;
+		border-style: solid;
+		border-color: transparent;
+		padding: 0em 1em;
+		margin: 1em 0;
+	}
+
+	.text-input:focus {
+		border-color: var(--color-primary);
 	}
 </style>

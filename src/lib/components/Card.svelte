@@ -6,7 +6,7 @@
 	$: ready = document !== undefined;
 </script>
 
-<a href="" class="card">
+<div class="card">
 	{#if !ready}
 		<h1>...Loading</h1>
 	{:else}
@@ -19,11 +19,11 @@
 				</div>
 			</div>
 			<p class="card__description">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?
+				Loem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?
 			</p>
 		</div>
 	{/if}
-</a>
+</div>
 
 <style>
 	:root {
@@ -36,14 +36,14 @@
 	}
 
 	.card {
-		max-width: 12rem;
+		max-width: 12em;
 		position: relative;
 		display: block;
-		height: 16rem;
+		height: 16em;
 		border-radius: calc(var(--curve) * 1px);
 		overflow: hidden;
 		text-decoration: none;
-		box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.25);
+		box-shadow: 0em 1em 2em var(--color-shadow);
 	}
 
 	.card__image {
@@ -54,7 +54,7 @@
 	.card__overlay {
 		position: absolute;
 		bottom: 0;
-		height: 16rem;
+		height: 16em;
 		left: 0;
 		right: 0;
 		z-index: 1;
@@ -73,7 +73,7 @@
 		display: flex;
 		align-items: center;
 		gap: 2em;
-		padding: 1em 2rem;
+		padding: 1em 2em;
 		border-radius: calc(var(--curve) * 1px) calc(var(--curve) * 1px) 0 0;
 		background-color: var(--surface-color);
 		transform: translateY(-100%);

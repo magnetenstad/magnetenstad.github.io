@@ -6,9 +6,9 @@
 <img class="portrait" src={imgSrc} alt={imgAlt} />
 
 <style>
-	img.portrait {
+	.portrait {
 		border-radius: 50%;
-		box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+		box-shadow: 0 1em 2em var(--color-shadow);
 		width: 100%;
 	}
 </style>

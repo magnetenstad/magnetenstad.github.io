@@ -8,24 +8,24 @@
 </button>
 
 <style>
-	:global button {
+	button {
 		border: none;
 		font-size: medium;
-		padding: 0.5rem 1rem;
-		border-radius: 1rem;
+		padding: 0.5em 1em;
+		border-radius: 1em;
 		color: white;
-		background-color: rgb(252, 159, 82);
+		background-color: var(--color-primary);
 	}
 
-	:global button:hover {
+	button:hover {
 		cursor: pointer;
 		animation-duration: 0.25s;
 		animation-name: button-hover;
 		animation-fill-mode: forwards;
 	}
 
-	:global button:active {
-		background-color: rgb(243, 147, 91);
+	button:active {
+		background-color: var(--color-primary-dark);
 		animation-duration: 0.2s;
 		animation-name: button-click;
 	}
@@ -47,7 +47,8 @@
 
 		to {
 			transform: translateY(-4px);
-			background-color: rgb(255, 179, 92);
+			background-color: var(--color-primary-light);
+			box-shadow: 0 4px 1em rgba(var(--color-primary-rgb), 0.5);
 		}
 	}
 </style>

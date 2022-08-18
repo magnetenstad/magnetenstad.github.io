@@ -1,11 +1,11 @@
 export { Message };
 
 class Message {
-  from: string;
+  incoming: boolean;
   text: string;
 
-  constructor(from, text) {
-    this.from = from;
+  constructor(incoming: boolean, text: string) {
+    this.incoming = incoming;
     this.text = text;
   }
 }
