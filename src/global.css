@@ -8,6 +8,9 @@
   --color-primary: rgb(var(--color-primary-rgb));
   --color-primary-dark: rgb(243, 147, 91);
   --color-shadow: rgba(0, 0, 0, 0.25);
+  --color-accent-rgb: 255, 50, 120;
+  --color-accent: rgb(var(--color-accent-rgb));
+  --color-accent-shadow: rgba(var(--color-accent-rgb), 0.1);
 }
 
 :global body {

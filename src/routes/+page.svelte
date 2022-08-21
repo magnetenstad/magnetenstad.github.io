@@ -3,9 +3,11 @@
   import Portrait from '$lib/components/Portrait.svelte';
   import Button from '$lib/components/Button.svelte';
   import { goto } from '$app/navigation';
+  import HeartButton from '$lib/components/HeartButton.svelte';
 </script>
 
 <div class="wrapper">
+  <HeartButton />
   <HelloDialog>
     <div style="max-width: 80%;">
       <h1>Hey, I'm Magne Tenstad 👋</h1>
