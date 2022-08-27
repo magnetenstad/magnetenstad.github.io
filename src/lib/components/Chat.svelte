@@ -170,4 +170,10 @@
     flex-wrap: wrap;
     background-color: var(--color-primary);
   }
+
+  @media only screen and (max-width: 768px) {
+    .choices-wrapper {
+      padding: 2em 1em 4em 1em;
+    }
+  }
 </style>
