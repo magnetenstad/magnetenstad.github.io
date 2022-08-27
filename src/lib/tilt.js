@@ -1,7 +1,7 @@
 // Modified from: https://svelte.dev/repl/7b23ad9d2693424482cd411b0378b55b?version=3.24.1
 
 function getSettings(settings = {}) {
-  return { scale: 1, max: 15, reverse: true, ...settings };
+  return { scale: 1, max: 20, reverse: true, ...settings };
 }
 
 const TRANSITION_MS = 200;
