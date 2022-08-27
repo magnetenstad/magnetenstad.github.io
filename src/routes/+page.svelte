@@ -9,7 +9,7 @@
 <div class="wrapper">
   <HeartButton />
   <HelloDialog>
-    <div style="max-width: 80%;">
+    <div style="max-width: 80%; transform: translateZ(10px);">
       <h1>Hey, I'm Magne Tenstad 👋</h1>
       <ul>
         <li>CS student at NTNU</li>
@@ -24,8 +24,8 @@
       </div>
     </div>
     <br />
-    <div style="width: 100%; display:flex; justify-content: center;">
-      <Button onClick={() => goto('/chat')}>Hello! 👋</Button>
+    <div style="width: 100%; display:flex; justify-content: center; transform: translateZ(20px);">
+      <Button onClick={() => goto('/chat')} pulse={true}>Hello! 👋</Button>
     </div>
   </HelloDialog>
 </div>
@@ -40,9 +40,9 @@
 
   .portrait-wrapper {
     position: fixed;
-    left: 90%;
+    left: 80%;
     top: 20%;
-    transform: translate(-50%, -50%);
-    width: min(16em, 35vw);
+    transform: translate(0, -50%);
+    width: min(15em, 35vw);
   }
 </style>

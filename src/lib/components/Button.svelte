@@ -1,9 +1,10 @@
 <script lang="ts">
   export let style: string = '';
   export let onClick: () => void;
+  export let pulse: boolean = false;
 </script>
 
-<button on:click={onClick} {style}>
+<button on:click={onClick} {style} class={pulse ? 'pulse' : ''}>
   <slot />
 </button>
 
@@ -20,15 +21,29 @@
 
   button:hover {
     cursor: pointer;
-    animation-duration: 0.25s;
-    animation-name: button-hover;
-    animation-fill-mode: forwards;
+    animation: button-hover 0.25s forwards;
   }
 
   button:active {
     background-color: var(--color-primary-dark);
-    animation-duration: 0.2s;
-    animation-name: button-click;
+    animation: button-click 0.2s;
+  }
+
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: none;
+    }
+    50% {
+      background-color: var(--color-primary-light);
+      box-shadow: 0 0 2em rgba(var(--color-primary-rgb), 0.8);
+    }
+    0% {
+      box-shadow: none;
+    }
   }
 
   @keyframes button-click {

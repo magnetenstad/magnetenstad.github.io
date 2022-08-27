@@ -7,6 +7,7 @@
 
 <style>
   .portrait {
+    transform: translateZ(40px);
     border-radius: 50%;
     box-shadow: 0 1em 2em var(--color-shadow);
     width: 100%;

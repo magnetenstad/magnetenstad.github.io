@@ -1,20 +1,23 @@
 <script lang="ts">
+  import tilt from '$lib/tilt.js';
 </script>
 
-<div class="dialog">
-  <div class="body">
+<div class="wrapper">
+  <div class="dialog" use:tilt>
     <slot />
   </div>
 </div>
 
 <style>
-  .dialog {
-    padding: 2em;
-
+  .wrapper {
     position: fixed;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(100px);
+  }
+  .dialog {
+    padding: 2em;
+
     width: min(24em, 80vw);
 
     background-color: white;
