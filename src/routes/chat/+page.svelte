@@ -13,7 +13,6 @@
 <style>
   .wrapper {
     background-color: var(--color-background);
-    overflow: hidden;
     display: flex;
     height: 100vh; /* fall-back */
     height: fill-available;

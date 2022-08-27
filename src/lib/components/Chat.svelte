@@ -89,6 +89,15 @@
     overflow: hidden;
   }
 
+  @media only screen and (max-width: 768px) {
+    .window {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+
   .scroll-wrapper {
     overflow: auto;
   }
