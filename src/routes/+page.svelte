@@ -35,9 +35,11 @@
 <style>
   .wrapper {
     background-color: var(--color-background);
+    width: 100%;
     height: 100vh; /* fall-back */
     height: fill-available;
     height: 100svh;
+    overflow: hidden;
   }
 
   .portrait-wrapper {
