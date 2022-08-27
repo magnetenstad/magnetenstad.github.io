@@ -15,6 +15,7 @@
     border-radius: 1em;
     color: white;
     background-color: var(--color-primary);
+    user-select: none;
   }
 
   button:hover {

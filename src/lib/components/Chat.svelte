@@ -42,7 +42,7 @@
 
 <div class="window">
   <div class="scroll-wrapper">
-    <div style="height: 100vh;" />
+    <div class="scroll-padding-top" />
     <div class="messages-wrapper">
       {#each messages as message, i}
         {#if message.incoming}
@@ -63,7 +63,9 @@
   </div>
   <div class="choices-wrapper">
     {#each choices as choice, i}
-      <Button onClick={() => click(`${i}`)}>{choice.text}</Button>
+      <Button onClick={() => click(`${i}`)} style="border: 2px solid white; font-weight: bold;">
+        {choice.text}
+      </Button>
     {/each}
   </div>
 </div>
@@ -71,7 +73,7 @@
 <style>
   .window {
     width: 80%;
-    height: 80%;
+    min-width: 20%;
     max-width: 25em;
 
     display: flex;
@@ -79,10 +81,12 @@
     justify-content: end;
 
     background-color: var(--color-background);
-    padding: 1em;
+    padding: 0;
     margin: 2em auto;
     border-radius: 2em;
     box-shadow: 0em 1em 2em var(--color-shadow);
+
+    overflow: hidden;
   }
 
   .scroll-wrapper {
@@ -93,10 +97,13 @@
     display: none;
   }
 
+  .scroll-padding-top {
+    height: 100vh;
+  }
+
   .messages-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: end;
   }
 
   .message {
@@ -121,8 +128,7 @@
     border-radius: 1em;
     box-shadow: 0em 0.5em 1em var(--color-shadow);
     padding: 0.5em 1em;
-    margin: 0;
-    margin-left: 1em;
+    margin: 0 1em;
     height: min-content;
   }
 
@@ -149,7 +155,8 @@
     display: flex;
     justify-content: center;
     gap: 1em;
-    padding: 1em;
+    padding: 2em 1em;
     flex-wrap: wrap;
+    background-color: var(--color-primary);
   }
 </style>
