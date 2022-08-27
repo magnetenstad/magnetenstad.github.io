@@ -33,7 +33,8 @@
 <style>
   .wrapper {
     background-color: var(--color-background);
-    min-height: 100vh;
+    min-height: 100vh; /* fall-back */
+    min-height: fill-available;
     overflow: hidden;
   }
 

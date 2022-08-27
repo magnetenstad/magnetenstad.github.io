@@ -98,7 +98,8 @@
   }
 
   .scroll-padding-top {
-    height: 100vh;
+    min-height: 100vh; /* fall-back */
+    min-height: fill-available;
   }
 
   .messages-wrapper {

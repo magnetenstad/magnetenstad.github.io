@@ -7,20 +7,15 @@
 </script>
 
 <div class="wrapper">
-  <div class="body">
-    <Chat {imgSrc} {prat} />
-  </div>
+  <Chat {imgSrc} {prat} />
 </div>
 
 <style>
   .wrapper {
     background-color: var(--color-background);
-    min-height: 100vh;
     overflow: hidden;
-  }
-
-  .body {
     display: flex;
-    height: 100vh;
+    height: 100vh; /* fall-back */
+    height: fill-available;
   }
 </style>
