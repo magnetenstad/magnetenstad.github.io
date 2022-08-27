@@ -10,13 +10,15 @@
 
 <style>
   .wrapper {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) translateZ(100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateZ(100px);
+    height: 100%;
   }
   .dialog {
     padding: 2em;
+    margin: 1em;
 
     width: min(24em, 80vw);
 
