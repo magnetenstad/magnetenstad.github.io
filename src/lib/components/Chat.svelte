@@ -75,14 +75,13 @@
     width: 80%;
     min-width: 20%;
     max-width: 25em;
+    max-height: calc(100% - 2em);
 
     display: flex;
     flex-direction: column;
     justify-content: end;
 
     background-color: var(--color-background);
-    padding: 0;
-    margin: 2em auto;
     border-radius: 2em;
     box-shadow: 0em 1em 2em var(--color-shadow);
 
@@ -100,6 +99,7 @@
 
   .scroll-wrapper {
     overflow: auto;
+    max-height: 100%;
   }
 
   .scroll-wrapper::-webkit-scrollbar {

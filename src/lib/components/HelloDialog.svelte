@@ -10,11 +10,7 @@
 
 <style>
   .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transform: translateZ(100px);
-    height: 100%;
   }
   .dialog {
     padding: 2em;

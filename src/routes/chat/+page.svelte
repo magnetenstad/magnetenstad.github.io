@@ -6,16 +6,4 @@
   const imgSrc = 'https://avatars.githubusercontent.com/u/46494695';
 </script>
 
-<div class="wrapper">
-  <Chat {imgSrc} {prat} />
-</div>
-
-<style>
-  .wrapper {
-    background-color: var(--color-background);
-    display: flex;
-    height: 100vh; /* fall-back */
-    height: fill-available;
-    height: 100svh;
-  }
-</style>
+<Chat {imgSrc} {prat} />
