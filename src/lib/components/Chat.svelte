@@ -107,8 +107,9 @@
   }
 
   .scroll-padding-top {
-    min-height: 100vh; /* fall-back */
-    min-height: fill-available;
+    height: 100vh; /* fall-back */
+    height: fill-available;
+    height: 100svh;
   }
 
   .messages-wrapper {

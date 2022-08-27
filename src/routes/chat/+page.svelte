@@ -16,5 +16,6 @@
     display: flex;
     height: 100vh; /* fall-back */
     height: fill-available;
+    height: 100svh;
   }
 </style>
