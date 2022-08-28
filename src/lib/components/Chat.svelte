@@ -92,6 +92,7 @@
     .window {
       width: 100%;
       max-width: 100%;
+      max-height: 100%;
       margin: 0;
       border-radius: 0;
     }
