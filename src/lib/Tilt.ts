@@ -6,11 +6,11 @@ function getSettings(settings = {}) {
 
 const TRANSITION_MS = 200;
 
-export default function tilt(node, settingsObj) {
+export default function tilt(node: any, settingsObj?: any) {
   let settings = getSettings(settingsObj);
   let reverse = settings.reverse ? -1 : 1;
 
-  function onMouseMove(e) {
+  function onMouseMove(e: any) {
     const percX = e.pageX / window.innerWidth;
     const percY = e.pageY / window.innerHeight;
 
@@ -26,7 +26,7 @@ export default function tilt(node, settingsObj) {
       `scale3d(${Array(3).fill(scale).join(', ')})`;
   }
 
-  let transitionId;
+  let transitionId: NodeJS.Timeout;
   function smoothTransition() {
     clearTimeout(transitionId);
     node.style.willChange = 'transform';
@@ -55,7 +55,7 @@ export default function tilt(node, settingsObj) {
       document.removeEventListener('mouseleave', onMouseLeave);
       document.removeEventListener('mouseleave', onMouseEnter);
     },
-    update(settingsObj) {
+    update(settingsObj: any) {
       settings = getSettings(settingsObj);
       reverse = settings.reverse ? -1 : 1;
     }

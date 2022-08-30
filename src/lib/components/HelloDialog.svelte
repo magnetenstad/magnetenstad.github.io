@@ -1,5 +1,5 @@
 <script lang="ts">
-  import tilt from '$lib/tilt.js';
+  import tilt from '$lib/Tilt.js';
 </script>
 
 <div class="wrapper">

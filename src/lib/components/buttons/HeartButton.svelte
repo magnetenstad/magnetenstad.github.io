@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Heart from '$lib/components/Heart.svelte';
+  import BaseIcon from '$lib/components/icons/BaseIcon.svelte';
+  import HeartSvg from '$lib/assets/icons/heart.svelte';
   import axios from 'axios';
 
   let likes = 0;
@@ -15,7 +16,9 @@
 
 <div class="like-button" on:click|once|stopPropagation={addLike}>
   {likes > 0 ? likes : ''}
-  <Heart fill={hasLiked ? 'var(--color-accent)' : 'none'} />
+  <BaseIcon options={{ fill: hasLiked ? 'var(--color-accent)' : 'none' }}>
+    <HeartSvg />
+  </BaseIcon>
 </div>
 
 <style>
