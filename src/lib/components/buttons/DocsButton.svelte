@@ -15,6 +15,7 @@
   Docs
 </div>
 
+<!-- TODO: Merge with HeartButton -->
 <style>
   .docs-button {
     position: fixed;
@@ -34,5 +35,6 @@
     gap: 4px;
 
     user-select: none;
+    cursor: pointer;
   }
 </style>

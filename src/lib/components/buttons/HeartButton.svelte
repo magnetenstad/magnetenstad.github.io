@@ -40,5 +40,6 @@
     gap: 4px;
 
     user-select: none;
+    cursor: pointer;
   }
 </style>
