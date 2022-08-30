@@ -2,7 +2,7 @@
   import { Message } from '$lib/Message';
   import type { Prat } from 'pratjs';
   import { onMount } from 'svelte';
-  import Button from './Button.svelte';
+  import Button from './buttons/Button.svelte';
 
   export let imgSrc: string;
   export let prat: Prat;
