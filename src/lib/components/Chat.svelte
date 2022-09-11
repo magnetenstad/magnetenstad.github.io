@@ -7,18 +7,18 @@
   export let imgSrc: string;
   export let prat: Prat;
   let messages: Array<Message> = [];
-  let choices = [];
+  let choices: string[] = [];
 
   const addMessage = (msg: Message) => {
     messages = [...messages, msg];
   };
 
   const getChoices = () => {
-    choices = prat.getChoices();
+    choices = prat.getChoiceTexts();
     while (choices.length === 0) {
-      prat.input('');
-      addMessage(new Message(true, prat.getLine().text));
-      choices = prat.getChoices();
+      prat.input();
+      addMessage(new Message(true, prat.getText()));
+      choices = prat.getChoiceTexts();
     }
   };
   const scrollDown = () =>
@@ -28,12 +28,12 @@
     );
   const click = (index: string) => {
     prat.input(index);
-    addMessage(new Message(false, prat.getLine().text));
+    addMessage(new Message(false, prat.getText()));
     getChoices();
     scrollDown();
   };
 
-  addMessage(new Message(true, prat.getLine().text));
+  addMessage(new Message(true, prat.getText()));
   getChoices();
   onMount(() => {
     scrollDown();
@@ -64,7 +64,7 @@
   <div class="choices-wrapper">
     {#each choices as choice, i}
       <Button onClick={() => click(`${i}`)} style="border: 2px solid white; font-weight: bold;">
-        {choice.text}
+        {choice}
       </Button>
     {/each}
   </div>
