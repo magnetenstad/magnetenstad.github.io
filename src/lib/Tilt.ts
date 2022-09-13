@@ -4,13 +4,13 @@ function getSettings(settings = {}) {
   return { scale: 1, max: 20, reverse: true, ...settings };
 }
 
-const TRANSITION_MS = 200;
-
 export default function tilt(node: any, settingsObj?: any) {
   let settings = getSettings(settingsObj);
   let reverse = settings.reverse ? -1 : 1;
+  let active = false;
 
   function onMouseMove(e: any) {
+    if (!active) return;
     const percX = e.pageX / window.innerWidth;
     const percY = e.pageY / window.innerHeight;
 
@@ -27,33 +27,44 @@ export default function tilt(node: any, settingsObj?: any) {
   }
 
   let transitionId: NodeJS.Timeout;
-  function smoothTransition() {
+  function smoothTransition(transitionMs: number) {
     clearTimeout(transitionId);
     node.style.willChange = 'transform';
-    node.style.transition = `${TRANSITION_MS}ms`;
-    transitionId = setTimeout(() => (node.style.transition = '0s'), TRANSITION_MS);
+    node.style.transition = `${transitionMs}ms`;
+    transitionId = setTimeout(() => (node.style.transition = '0s'), transitionMs);
   }
 
-  function onMouseLeave() {
-    smoothTransition();
+  function disableTilt(transitionMs: number) {
+    active = false;
+    smoothTransition(transitionMs);
     node.style.transform =
       `perspective(${1000}px) ` + `rotateX(0deg) ` + `rotateY(0deg) ` + `scale3d(1, 1, 1)`;
   }
 
-  function onMouseEnter() {
-    smoothTransition();
+  function enableTilt(transitionMs: number) {
+    active = true;
+    smoothTransition(transitionMs);
     node.style.willChange = 'transform';
   }
 
+  const onMouseEnterDoc = () => enableTilt(200);
+  const onMouseLeaveDoc = () => disableTilt(200);
+  const onMouseEnterNode = () => disableTilt(50);
+  const onMouseLeaveNode = () => enableTilt(50);
+
   document.addEventListener('mousemove', onMouseMove);
-  document.addEventListener('mouseleave', onMouseLeave);
-  document.addEventListener('mouseenter', onMouseEnter);
+  document.addEventListener('mouseenter', onMouseEnterDoc);
+  document.addEventListener('mouseleave', onMouseLeaveDoc);
+  node.addEventListener('mouseenter', onMouseEnterNode);
+  node.addEventListener('mouseleave', onMouseLeaveNode);
 
   return {
     destroy() {
       document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseleave', onMouseLeave);
-      document.removeEventListener('mouseleave', onMouseEnter);
+      document.removeEventListener('mouseenter', onMouseEnterDoc);
+      document.removeEventListener('mouseleave', onMouseLeaveDoc);
+      node.removeEventListener('mouseenter', onMouseEnterNode);
+      node.removeEventListener('mouseleave', onMouseLeaveNode);
     },
     update(settingsObj: any) {
       settings = getSettings(settingsObj);
