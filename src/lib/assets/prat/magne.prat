@@ -1,0 +1,64 @@
+%{ For chat feature on magne.dev }
+>{intro}
+
+%{ Declarations }
+#{showOnce} !!{$l.show = true} ?{$l.show} !{$l.show = false}
+#{skipSingle} ?{$l.instance.getResponses().length > 1}
+
+#{intro}
+@{Magne}
+Hey, I'm Magne Tenstad 👋
+I am a [Computer Science](https://www.ntnu.no/studier/mtdt) student and teaching assistant at NTNU, Trondheim. I also work part-time as a web developer at [Norsonic](https://web2.norsonic.com/). My hobby projects are available on [GitHub](https://github.com/magnetenstad), and I have published the game [CoderBear](https://store.steampowered.com/app/994360/CoderBear/) on Steam. I am currently seeking an internship for the summer of 2023.
+
+#{main}
+What would you like to know more about? +{skipSingle} >{end}
+	Work +{showOnce}
+		In the autumn of 2021, I was a student assistant in TDT4110 - [Information Technology, Introduction](https://www.ntnu.edu/studies/courses/TDT4110#tab=omEmnet). I got my first internship the following summer, at [Norsonic](https://web2.norsonic.com/). This autumn (2022), I have continued working part-time for Norsonic, as well as working as a teaching assistant in TDT4121 - [Introduction to Algorithms](https://www.ntnu.edu/studies/courses/TDT4121#tab=omEmnet). At Norsonic, I work on [Norcloud](https://web2.norsonic.com/product_single/norcloud/), a cloud service used to collect, display and process sound level data.
+		#{work}
+		Do you have any more questions regarding my work experience? +{skipSingle} >{main}
+			About Norsonic +{showOnce}
+				Norsonic builds innovative sound and vibration measurement solutions. You can watch a short (3 min) introduction [here](https://www.youtube.com/watch?v=7bOFbNtACR0&t=39s).
+				#{norsonic}
+				What do you want to know? +{skipSingle} >{work}
+					What did you do at Norsonic this summer? +{showOnce}
+						My original task for the summer was to build some dashboards, for viewing the real-time activity of users and for reviewing trends of user activity over time. After completing these, I set up an automatic integration test framework, worked on remote control of instruments from the web and tested WebAssembly with Rust, among other things.
+							Ok
+					What do you do at Norsonic now? +{showOnce}
+						I work on maintaining and extending the functionality of Norcloud. My current work schedule is flexible, but is usually 4-12 hours a week.
+							Ok
+					None of these >{work}
+				>{norsonic}
+			About NTNU +{showOnce}
+				#{ntnu}
+				What do you want to know? +{skipSingle} >{work}
+					What did you do in TDT4110? +{showOnce}
+						As a student assistant in TDT4110, I had one-to-one sessions with students to provide help with and grade their programming assignments.
+							Ok
+					What do you do in TDT4121? +{showOnce}
+						As a teaching assistant in TDT4121, I take part in the assigment lectures and respond to forum questions.
+							Ok
+					None of these >{work}
+				>{ntnu}
+			None of these >{main}
+		>{work}
+	Education +{showOnce}
+		Sorry, this conversation is still under construction.
+		Do you have any more questions regarding my education? +{skipSingle} >{main}
+			None of these
+				>{main}
+	Hobbies +{showOnce}
+		#{hobbies}
+		Sorry, this conversation is still under construction.
+		%{ Software, games, art }
+		Do you have any more questions regarding my hobbies? +{skipSingle} >{main}
+			None of these
+				>{main}
+	None of these >{end}
+#{end}
+Thank you for your interest!
+	How did you make this? +{showOnce}
+		I made this chat using my own dialog system, [Talk](https://github.com/magnetenstad/talk). (Or [pratjs](https://www.npmjs.com/package/pratjs) on NPM). The source of our conversation can be found [here](https://github.com/magnetenstad/magnetenstad.github.io/blob/main/src/lib/assets/talk/magne.talk). It is best viewed in VSCode, with the [Talk Extension](https://marketplace.visualstudio.com/items?itemName=magneet.talkgrammar)
+	How can I contact you? +{showOnce}
+		Click [here](mailto:magneet@stud.ntnu.no) to send me an email.
+	You are welcome
+>{end}

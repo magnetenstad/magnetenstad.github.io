@@ -3,6 +3,7 @@
   import type { Prat } from 'pratjs';
   import { onMount } from 'svelte';
   import Button from './buttons/Button.svelte';
+  import SvelteMarkdown from 'svelte-markdown';
 
   export let imgSrc: string;
   export let prat: Prat;
@@ -14,11 +15,12 @@
   };
 
   const getChoices = () => {
-    choices = prat.getChoiceTexts();
+    choices = prat.get().responses;
     while (choices.length === 0) {
-      prat.input();
-      addMessage(new Message(true, prat.getText()));
-      choices = prat.getChoiceTexts();
+      prat.respond();
+      const state = prat.get();
+      addMessage(new Message(true, state.statement));
+      choices = state.responses;
     }
   };
   const scrollDown = () =>
@@ -27,13 +29,13 @@
       100
     );
   const click = (index: string) => {
-    prat.input(index);
-    addMessage(new Message(false, prat.getText()));
+    prat.respond(index);
+    addMessage(new Message(false, prat.get().statement));
     getChoices();
     scrollDown();
   };
 
-  addMessage(new Message(true, prat.getText()));
+  addMessage(new Message(true, prat.get().statement));
   getChoices();
   onMount(() => {
     scrollDown();
@@ -47,14 +49,18 @@
       {#each messages as message, i}
         {#if message.incoming}
           <div class="message message-left">
-            <p>{message.text}</p>
+            <div class="message-content">
+              <SvelteMarkdown source={message.text} />
+            </div>
           </div>
           {#if !messages[i + 1]?.incoming ?? false}
             <img class="message-img" src={imgSrc} alt="" />
           {/if}
         {:else}
           <div class="message message-right">
-            <p class="user">{message.text}</p>
+            <div class="message-content message-content-user">
+              <SvelteMarkdown source={message.text} />
+            </div>
           </div>
         {/if}
       {/each}
@@ -63,9 +69,11 @@
   </div>
   <div class="choices-wrapper">
     {#each choices as choice, i}
-      <Button onClick={() => click(`${i}`)} style="border: 2px solid white; font-weight: bold;">
-        {choice}
-      </Button>
+      <div>
+        <Button onClick={() => click(`${i}`)} style="border: 2px solid white; font-weight: bold;">
+          {choice}
+        </Button>
+      </div>
     {/each}
   </div>
 </div>
@@ -124,7 +132,7 @@
     flex-direction: row;
     align-items: center;
     margin: 0.5em;
-    max-width: 64%;
+    max-width: 67%;
   }
 
   .message-left {
@@ -135,18 +143,22 @@
     align-self: flex-end;
   }
 
-  p {
+  .message-content {
     background-color: white;
     border-radius: 1em;
     box-shadow: 0em 0.5em 1em var(--color-shadow);
-    padding: 0.5em 1em;
+    padding: 0 1em;
     margin: 0 1em;
     height: min-content;
   }
 
-  p.user {
+  .message-content-user {
     background-color: var(--color-primary);
     color: white;
+  }
+
+  :global a {
+    color: black;
   }
 
   .message-img {
@@ -170,6 +182,7 @@
     padding: 2em 1em;
     flex-wrap: wrap;
     background-color: var(--color-primary);
+    transition: 1s ease-in-out;
   }
 
   @media only screen and (max-width: 768px) {

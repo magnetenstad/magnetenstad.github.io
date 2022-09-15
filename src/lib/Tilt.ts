@@ -11,13 +11,16 @@ export default function tilt(node: any, settingsObj?: any) {
 
   function onMouseMove(e: any) {
     if (!active) return;
-    const percX = e.pageX / window.innerWidth;
-    const percY = e.pageY / window.innerHeight;
+    const maxDistX = window.innerWidth / 2;
+    const maxDistY = window.innerHeight / 2;
+    const centerX = maxDistX;
+    const centerY = maxDistY;
+    const deltaX = centerX - e.pageX;
+    const deltaY = centerY - e.pageY;
 
     const { max, scale } = settings;
-    const twiceMax = max * 2;
-    const tiltX = max - percX * twiceMax;
-    const tiltY = percY * twiceMax - max;
+    const tiltX = (deltaX / maxDistX) * max;
+    const tiltY = -(deltaY / maxDistY) * max;
 
     node.style.transform =
       `perspective(${1000}px) ` +
