@@ -1,6 +1,6 @@
 {
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-f0eba1ec.js",
+    "file": "_app/immutable/start-9cec5d28.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -34,12 +34,12 @@
     ]
   },
   "src/routes/+page.svelte": {
-    "file": "_app/immutable/components/pages/_page.svelte-dc42afe5.js",
+    "file": "_app/immutable/components/pages/_page.svelte-bd508841.js",
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
       "_index-bd23b365.js",
-      "_Button-e2b560e5.js",
+      "_navigation-c245379f.js",
       "_singletons-e5e57fbd.js"
     ],
     "css": [
@@ -47,12 +47,13 @@
     ]
   },
   "src/routes/chat/+page.svelte": {
-    "file": "_app/immutable/components/pages/chat/_page.svelte-0895fd2a.js",
+    "file": "_app/immutable/components/pages/chat/_page.svelte-415075c9.js",
     "src": "src/routes/chat/+page.svelte",
     "isEntry": true,
     "imports": [
       "_index-bd23b365.js",
-      "_Button-e2b560e5.js"
+      "_navigation-c245379f.js",
+      "_singletons-e5e57fbd.js"
     ],
     "css": [
       "_app/immutable/assets/+page-8c71a984.css"
@@ -64,13 +65,14 @@
   "_index-bd23b365.js": {
     "file": "_app/immutable/chunks/index-bd23b365.js"
   },
-  "_Button-e2b560e5.js": {
-    "file": "_app/immutable/chunks/Button-e2b560e5.js",
+  "_navigation-c245379f.js": {
+    "file": "_app/immutable/chunks/navigation-c245379f.js",
     "imports": [
-      "_index-bd23b365.js"
+      "_index-bd23b365.js",
+      "_singletons-e5e57fbd.js"
     ],
     "css": [
-      "_app/immutable/assets/Button-0d52c8cd.css"
+      "_app/immutable/assets/navigation-0d52c8cd.css"
     ]
   },
   ".svelte-kit/generated/nodes/0.js": {
@@ -92,37 +94,38 @@
     ]
   },
   ".svelte-kit/generated/nodes/2.js": {
-    "file": "_app/immutable/chunks/2-349b204e.js",
+    "file": "_app/immutable/chunks/2-26f40442.js",
     "src": ".svelte-kit/generated/nodes/2.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/+page.svelte",
       "_index-bd23b365.js",
-      "_Button-e2b560e5.js",
+      "_navigation-c245379f.js",
       "_singletons-e5e57fbd.js"
     ]
   },
   ".svelte-kit/generated/nodes/3.js": {
-    "file": "_app/immutable/chunks/3-5d1eb683.js",
+    "file": "_app/immutable/chunks/3-598917ec.js",
     "src": ".svelte-kit/generated/nodes/3.js",
     "isDynamicEntry": true,
     "imports": [
       "src/routes/chat/+page.svelte",
       "_index-bd23b365.js",
-      "_Button-e2b560e5.js"
+      "_navigation-c245379f.js",
+      "_singletons-e5e57fbd.js"
     ]
   },
   "src/routes/+page.css": {
     "file": "_app/immutable/assets/+page-464e20d5.css",
     "src": "src/routes/+page.css"
   },
-  "Button.css": {
-    "file": "_app/immutable/assets/Button-0d52c8cd.css",
-    "src": "Button.css"
-  },
   "src/routes/chat/+page.css": {
     "file": "_app/immutable/assets/+page-8c71a984.css",
     "src": "src/routes/chat/+page.css"
+  },
+  "navigation.css": {
+    "file": "_app/immutable/assets/navigation-0d52c8cd.css",
+    "src": "navigation.css"
   },
   "src/routes/+layout.css": {
     "file": "_app/immutable/assets/+layout-c52a73c2.css",
