@@ -32,9 +32,10 @@ export default function tilt(node: any, settingsObj?: any) {
   let transitionId: NodeJS.Timeout;
   function smoothTransition(transitionMs: number) {
     clearTimeout(transitionId);
+    if (transitionMs <= 0) return;
     node.style.willChange = 'transform';
     node.style.transition = `${transitionMs}ms`;
-    transitionId = setTimeout(() => (node.style.transition = '0s'), transitionMs);
+    transitionId = setTimeout(() => smoothTransition(transitionMs / 2 - 1), transitionMs / 2 - 1);
   }
 
   function disableTilt(transitionMs: number) {
@@ -50,16 +51,17 @@ export default function tilt(node: any, settingsObj?: any) {
     node.style.willChange = 'transform';
   }
 
-  const onMouseEnterDoc = () => enableTilt(200);
-  const onMouseLeaveDoc = () => disableTilt(200);
-  const onMouseEnterNode = () => disableTilt(50);
-  const onMouseLeaveNode = () => enableTilt(50);
+  const onMouseEnterDoc = () => enableTilt(300);
+  const onMouseLeaveDoc = () => disableTilt(300);
+  const onMouseEnterNode = () => disableTilt(100);
+  const onMouseLeaveNode = () => enableTilt(100);
 
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseenter', onMouseEnterDoc);
   document.addEventListener('mouseleave', onMouseLeaveDoc);
   node.addEventListener('mouseenter', onMouseEnterNode);
   node.addEventListener('mouseleave', onMouseLeaveNode);
+  onMouseEnterDoc();
 
   return {
     destroy() {
