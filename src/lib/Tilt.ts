@@ -14,7 +14,7 @@ export default function tilt(node: any, settingsObj?: any) {
     const maxDistX = window.innerWidth / 2;
     const maxDistY = window.innerHeight / 2;
     const centerX = maxDistX;
-    const centerY = maxDistY;
+    const centerY = maxDistY + 100;
     const deltaX = centerX - e.pageX;
     const deltaY = centerY - e.pageY;
 
@@ -59,8 +59,8 @@ export default function tilt(node: any, settingsObj?: any) {
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseenter', onMouseEnterDoc);
   document.addEventListener('mouseleave', onMouseLeaveDoc);
-  node.addEventListener('mouseenter', onMouseEnterNode);
-  node.addEventListener('mouseleave', onMouseLeaveNode);
+  // node.addEventListener('mouseenter', onMouseEnterNode);
+  // node.addEventListener('mouseleave', onMouseLeaveNode);
   onMouseEnterDoc();
 
   return {
