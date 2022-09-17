@@ -3,15 +3,15 @@
 
 %{ Declarations }
 #{showOnce} !!{$l.show = true} ?{$l.show} !{$l.show = false}
-#{skipSingle} ?{$l.instance.getResponses().length > 1}
+#{skipSingle} ?{$l.instance.get().responses.length > 1}
 
 #{intro}
 @{Magne}
 Hey, I'm Magne Tenstad 👋
-I am a [Computer Science](https://www.ntnu.no/studier/mtdt) student and teaching assistant at NTNU, Trondheim. I also work part-time as a web developer at [Norsonic](https://web2.norsonic.com/). My hobby projects are available on [GitHub](https://github.com/magnetenstad), and I have published the game [CoderBear](https://store.steampowered.com/app/994360/CoderBear/) on Steam. I am currently seeking an internship for the summer of 2023.
+I am a [computer science](https://www.ntnu.no/studier/mtdt) student and teaching assistant at NTNU, Trondheim. I also work part-time as a web developer at [Norsonic](https://web2.norsonic.com/). My hobby projects are available on [GitHub](https://github.com/magnetenstad), and I have published the game [CoderBear](https://store.steampowered.com/app/994360/CoderBear/) on Steam. I am currently seeking an internship for the summer of 2023.
 
 #{main}
-What would you like to know more about? +{skipSingle} >{end}
+What would you like to know more about? +{skipSingle} >{thanks}
 	Work +{showOnce}
 		In the autumn of 2021, I was a student assistant in TDT4110 - [Information Technology, Introduction](https://www.ntnu.edu/studies/courses/TDT4110#tab=omEmnet). I got my first internship the following summer, at [Norsonic](https://web2.norsonic.com/). This autumn (2022), I have continued working part-time for Norsonic, as well as working as a teaching assistant in TDT4121 - [Introduction to Algorithms](https://www.ntnu.edu/studies/courses/TDT4121#tab=omEmnet). At Norsonic, I work on [Norcloud](https://web2.norsonic.com/product_single/norcloud/), a cloud service used to collect, display and process sound level data.
 		#{work}
@@ -24,7 +24,7 @@ What would you like to know more about? +{skipSingle} >{end}
 						My original task for the summer was to build some dashboards, for viewing the real-time activity of users and for reviewing trends of user activity over time. After completing these, I set up an automatic integration test framework, worked on remote control of instruments from the web and tested WebAssembly with Rust, among other things.
 							Ok
 					What do you do at Norsonic now? +{showOnce}
-						I work on maintaining and extending the functionality of Norcloud. My current work schedule is flexible, but is usually 4-12 hours a week.
+						I work on maintaining and extending the functionality of Norcloud. My current work schedule is flexible, but usually 4-12 hours a week.
 							Ok
 					None of these >{work}
 				>{norsonic}
@@ -42,23 +42,42 @@ What would you like to know more about? +{skipSingle} >{end}
 			None of these >{main}
 		>{work}
 	Education +{showOnce}
-		Sorry, this conversation is still under construction.
+		I am currently on my third year of the computer science Master's degree programme at NTNU. My field of study is Algorithms and Computers - methods and techniques for development of high performance systems.
+		#{education}
 		Do you have any more questions regarding my education? +{skipSingle} >{main}
-			None of these
-				>{main}
+			What are your favorite courses? +{showOnce}
+				My favorite course each semester is usually the one that includes the most programming. My top three picks are: 🥇 [TDT4120 - Algorithms and Datastructures](https://www.ntnu.edu/studies/courses/TDT4120#tab=omEmnet), because the exercise problems demanded creative thinking and were very rewarding to complete. 🥈 [TDT4140 - Software Engineering](https://www.ntnu.edu/studies/courses/TDT4140#tab=omEmnet), because it mostly consisted of practical group work and we created a fun web app. 🥉 [TDT4145 - Data Modelling, Databases and DBMS](https://www.ntnu.edu/studies/courses/TDT4145#tab=omEmnet), because it was a pleasant introduction to relational databases, which has proved to be useful to know about.
+					Ok
+			"Har du kok?" +{showOnce}
+				I have a collection of markdown notes from most of my courses. You can view them [here](https://magne.dev/docs/courses). I rarely publish solutions to assignments, especially not before the deadline. 
+					Ok
+			None of these >{main}
+		>{education}
 	Hobbies +{showOnce}
+		My main creative hobbies over the years have been programming, games and design.
 		#{hobbies}
-		Sorry, this conversation is still under construction.
-		%{ Software, games, art }
-		Do you have any more questions regarding my hobbies? +{skipSingle} >{main}
-			None of these
-				>{main}
-	None of these >{end}
-#{end}
+		What would you like to know more about? +{skipSingle} >{main}
+			Programming +{showOnce}
+				After learning to code from making games, I started exploring different use cases. One of my early projects was a [*nynorsk* assistant](https://github.com/magnetenstad/nynorsk.py) to help me on my exams. When I started paying for my own groceries, I created [groceries](https://magne.dev/groceries/) to keep track of prices and later [godmat.info](https://godmat.info/) to view the nutrition of my meals. Lately, I have been working on NPM packages like [marktree](https://github.com/magnetenstad/marktree) which I use for my [course notes](https://magne.dev/docs/courses), and [Prat](https://github.com/magnetenstad/prat.js), which is used to create this chat.
+					Ok
+			Games +{showOnce}
+				After creating custom minigames in games like Minecraft, I picked up games programming from my older brother. From middle school to high school, I spent many evenings exploring the capabilities of [GameMaker](https://gamemaker.io/), and partook in game jams such as [WGJ](https://weeklygamejam.itch.io/) and [Ludum Dare](https://ldjam.com/users/mitsu-artemius/games). My largest game project was [CoderBear](https://store.steampowered.com/app/994360/CoderBear/), which I published on Steam after a successful Kickstarter campaign. I still make time for game jams once in a while, teaming up with university friends.
+					Ok
+			Art & design +{showOnce}
+				Art and design have been a hobby for a long time, and I have taken a few small design-related jobs over the years. I freelanced drawing game characters for a while, and I have contributed to illustrations for [Science Shaped](https://scienceshaped.com/). Additionally, I have worked as a pixel artist for the mobile game [Curse of Aros](https://play.google.com/store/apps/details?id=com.bitgate.curseofaros&hl=en&gl=US). I appreciate an attention to design in many areas, be it the visuals and layout of an application, the level design or user experience of a game or the standards and structure of a codebase.
+					Ok
+			None of these >{main}
+		>{hobbies}
+	None of these >{thanks}
+#{thanks}
 Thank you for your interest!
+#{goodbye}
+Anything else?
 	How did you make this? +{showOnce}
-		I made this chat using my own dialog system, [Talk](https://github.com/magnetenstad/talk). (Or [pratjs](https://www.npmjs.com/package/pratjs) on NPM). The source of our conversation can be found [here](https://github.com/magnetenstad/magnetenstad.github.io/blob/main/src/lib/assets/talk/magne.talk). It is best viewed in VSCode, with the [Talk Extension](https://marketplace.visualstudio.com/items?itemName=magneet.talkgrammar)
+		I made this chat using my own dialog system, [Prat](https://github.com/magnetenstad/prat.js). The source of our conversation can be found [here](https://github.com/magnetenstad/magnetenstad.github.io/blob/main/src/lib/assets/talk/magne.talk). It is best viewed in VSCode, with the [Prat Extension](https://marketplace.visualstudio.com/items?itemName=magneet.prat).
 	How can I contact you? +{showOnce}
 		Click [here](mailto:magneet@stud.ntnu.no) to send me an email.
-	You are welcome
->{end}
+	Goodbye! >{end}
+	Restart. >{intro} !{$g.instance.resetContext()}
+>{goodbye}
+#{end}

@@ -4,39 +4,45 @@
   import { onMount } from 'svelte';
   import Button from './buttons/Button.svelte';
   import SvelteMarkdown from 'svelte-markdown';
+  import { goto } from '$app/navigation';
 
   export let imgSrc: string;
   export let prat: Prat;
   let messages: Array<Message> = [];
-  let choices: string[] = [];
+  let responses: string[] = [];
 
   const addMessage = (msg: Message) => {
     messages = [...messages, msg];
   };
 
-  const getChoices = () => {
-    choices = prat.get().responses;
-    while (choices.length === 0) {
-      prat.respond();
-      const state = prat.get();
+  const getResponses = () => {
+    let state = prat.get();
+    while (state.responses.length === 0 && !prat.hasEnded()) {
+      state = prat.respond().get();
       addMessage(new Message(true, state.statement));
-      choices = state.responses;
     }
+    responses = state.responses;
   };
+
   const scrollDown = () =>
     setTimeout(
       () => document.getElementById('bottom').scrollIntoView({ block: 'end', behavior: 'smooth' }),
       100
     );
-  const click = (index: string) => {
+
+  const click = (index: number) => {
     prat.respond(index);
     addMessage(new Message(false, prat.get().statement));
-    getChoices();
+    getResponses();
     scrollDown();
   };
 
+  prat.onEnd(() => {
+    goto('/');
+  });
+
   addMessage(new Message(true, prat.get().statement));
-  getChoices();
+  getResponses();
   onMount(() => {
     scrollDown();
   });
@@ -67,15 +73,17 @@
       <div id="bottom" />
     </div>
   </div>
+  <!-- {#if !complete} -->
   <div class="choices-wrapper">
-    {#each choices as choice, i}
+    {#each responses as choice, i}
       <div>
-        <Button onClick={() => click(`${i}`)} style="border: 2px solid white; font-weight: bold;">
+        <Button onClick={() => click(i)} style="border: 2px solid white; font-weight: bold;">
           {choice}
         </Button>
       </div>
     {/each}
   </div>
+  <!-- {/if} -->
 </div>
 
 <style>

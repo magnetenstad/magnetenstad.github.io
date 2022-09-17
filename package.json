@@ -32,7 +32,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "markdown-yaml-metadata-parser": "^3.0.0",
-    "pratjs": "^1.6.0",
+    "pratjs": "^1.6.2",
     "svelte-markdown": "^0.2.1"
   }
 }
