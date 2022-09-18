@@ -2,8 +2,8 @@
 >{intro}
 
 %{ Declarations }
-#{showOnce} !!{$l.show = true} ?{$l.show} !{$l.show = false}
-#{skipSingle} ?{$l.instance.get().responses.length > 1}
+#{showOnce} !!{l.show = true} ?{l.show} !{l.show = false}
+#{skipSingle} ?{l.instance.get().responses.length > 1}
 
 #{intro}
 @{Magne}
@@ -78,6 +78,6 @@ Anything else?
 	How can I contact you? +{showOnce}
 		Click [here](mailto:magneet@stud.ntnu.no) to send me an email.
 	Goodbye! >{end}
-	Restart. >{intro} !{$g.instance.resetContext()}
+	Restart. >{intro} !{g.instance.resetContext()}
 >{goodbye}
 #{end}
