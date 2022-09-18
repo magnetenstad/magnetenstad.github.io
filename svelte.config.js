@@ -11,10 +11,7 @@ const config = {
       assets: 'build',
       fallback: null
     }),
-    trailingSlash: 'always',
-    prerender: {
-      default: true
-    }
+    trailingSlash: 'always'
   }
 };
 
