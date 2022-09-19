@@ -14,6 +14,9 @@ export default {
       fallback: null,
       precompress: false
     }),
-    trailingSlash: 'always'
+    trailingSlash: 'always',
+    prerender: {
+      default: true
+    }
   }
 };
