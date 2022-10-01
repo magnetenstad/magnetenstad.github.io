@@ -15,8 +15,5 @@ export default {
       precompress: false
     }),
     trailingSlash: 'always',
-    prerender: {
-      default: true
-    }
   }
 };
