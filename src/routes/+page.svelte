@@ -18,7 +18,7 @@
       <li>👨‍🎓 CS student and TA at NTNU</li>
       <li>💻 Web Developer at Norsonic</li>
       <li>👾 Hobbyist Game Developer</li>
-      <li>🌴 Open to work this summer</li>
+      <!-- <li>🌴 Open to work this summer</li> -->
     </ul>
   </div>
   <div class="portrait-wrapper">
