@@ -3,22 +3,19 @@
   import Portrait from '$lib/components/Portrait.svelte';
   import Button from '$lib/components/buttons/Button.svelte';
   import { goto } from '$app/navigation';
-  // import HeartButton from '$lib/components/buttons/HeartButton.svelte';
   import DocsButton from '$lib/components/buttons/DocsButton.svelte';
 </script>
 
 <DocsButton />
-<!-- <HeartButton /> -->
 <HelloDialog>
   <div style="max-width: 68%; transform: translateZ(15px);">
     <h1>Hey, I'm Magne Tenstad 👋</h1>
   </div>
   <div style="transform: translateZ(15px);">
     <ul>
-      <li>👨‍🎓 CS student and TA at NTNU</li>
+      <li>👨‍🎓 CS student at NTNU</li>
       <li>💻 Web Developer at Norsonic</li>
       <li>👾 Hobbyist Game Developer</li>
-      <!-- <li>🌴 Open to work this summer</li> -->
     </ul>
   </div>
   <div class="portrait-wrapper">
@@ -45,5 +42,8 @@
     list-style: none;
     transform: translateX(-25px);
     padding: 0 0 0.2em 0;
+  }
+  ul {
+    padding-right: 0;
   }
 </style>

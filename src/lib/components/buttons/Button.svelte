@@ -12,7 +12,7 @@
   button {
     border: none;
     font-size: medium;
-    padding: 0.5em 1em;
+    padding: 0.6em 1.2em;
     border-radius: 1em;
     color: white;
     background-color: var(--color-primary);

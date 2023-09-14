@@ -26,12 +26,12 @@
     transform: translateZ(100px);
   }
   .dialog {
-    padding: 2em;
+    padding: 1.5em;
 
-    width: min(24em, 100vw - 8em);
+    width: min(24em, 100vw - 6em);
 
     background-color: white;
-    border-radius: 1em;
+    border-radius: 0.8em;
     box-shadow: 0 1em 2em var(--color-shadow);
   }
 </style>
