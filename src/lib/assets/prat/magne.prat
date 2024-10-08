@@ -9,6 +9,7 @@
 @{Magne}
 Hey, I'm Magne Tenstad 👋
 I am a [computer science](https://www.ntnu.no/studier/mtdt) student at NTNU, Trondheim with a specialization in algorithms and computers. I also work part-time as a web developer at [Norsonic](https://web2.norsonic.com/). My programming projects are available on [GitHub](https://github.com/magnetenstad), and I have published the game [CoderBear](https://store.steampowered.com/app/994360/CoderBear/) on Steam.
+Note: This conversation was written in Sep 2023 and will include outdated information.
 
 #{main}
 What would you like to know more about? +{skipSingle} >{thanks}
