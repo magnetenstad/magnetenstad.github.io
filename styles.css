@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+  font-family: 'Cascadia Code', sans-serif;
+  font-optical-sizing: auto;
+}
+
+body {
+  margin: 0;
+  background-color: #e8e8e8;
+}
+
+main {
+  box-sizing: border-box;
+  width: min(100svw, 1000px);
+  min-height: 100svh;
+  margin-inline: auto;
+  padding: 1rem 4rem;
+  background-color: white;
+}
+
+@media (max-width: 1000px) {
+  main {
+    padding: 1rem 2rem;
+  }
+}
+
+h1 {
+  font-family: 'Instrument Sans', sans-serif;
+}
+
+h2 {
+  background-color: rgb(8, 182, 95);
+  color: white;
+  padding-inline: 4px;
+  width: min-content;
+  font-size: larger;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+li {
+  line-height: 20pt;
+}
